@@ -6,5 +6,5 @@ Scrapy 爬虫框架基础实验完整代码。
 
 ```bash
 scrapy crawl courses  # 首页爬虫
-scrapy crawl mutipages  # 多页面爬虫
+scrapy crawl multipages  # 多页面爬虫
 ```
