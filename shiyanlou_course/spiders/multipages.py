@@ -3,7 +3,7 @@ import scrapy
 from shiyanlou_course.items import ShiyanlouCourseItem
 
 class CoursesSpider(scrapy.Spider):
-    name = 'mutipages'
+    name = 'multipages'
     allowed_domains = ['shiyanlou.com']
     start_urls = ['https://www.shiyanlou.com/courses/?fee=free']
     
@@ -12,9 +12,8 @@ class CoursesSpider(scrapy.Spider):
         """
         start_urls 需要返回一个可迭代对象，所以，你可以把它写成一个列表、元组或者生成器，这里用的是生成器
         """
-        url_temp = "https://www.shiyanlou.com/courses/?cursor={}"
-        cursor_list = ['', 'bz0yMA%3D%3D', 'bz00MA%3D%3D'] # 手动复制多个 cursor 值
-        return (url_temp.format(cursor) for cursor in cursor_list) # 1-3 页
+        url_temp = "https://www.shiyanlou.com/courses/?page={}"
+        return (url_temp.format(page+1) for page in range(5)) # 1-5 页
 
     def parse(self, response):
         # 解析当前页面各课程所在的 div, 将返回全部课程 Selector 列表
