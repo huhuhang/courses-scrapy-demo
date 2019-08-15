@@ -1,10 +1,16 @@
-### 楼+ 数据分析与挖掘实战
+<div align="center">
+  <h1>楼+ 数据分析与挖掘实战</h1>
+  <b>Scrapy 爬虫框架基础实践｜实验完整代码</b>
+</div>
 
-Scrapy 爬虫框架基础实验完整代码。
+<br />
 
-#### 使用方法：
+## Usage
 
 ```bash
+git clone https://github.com/huhuhang/courses-scrapy-demo.git  # 克隆仓库
+cd courses-scrapy-demo
+
 scrapy crawl courses  # 首页爬虫
 scrapy crawl multipages  # 多页面爬虫
 ```
