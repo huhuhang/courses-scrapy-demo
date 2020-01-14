@@ -30,4 +30,4 @@ class ShiyanlouCoursePipeline(object):
     # 当爬虫关闭时
     def close_spider(self, spider):
         # 将 df 存储为 csv 文件
-        pd.DataFrame.to_csv(self.df, "courses.csv")
+        self.df.to_csv("courses.csv")
